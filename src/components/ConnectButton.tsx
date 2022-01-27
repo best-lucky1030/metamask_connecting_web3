@@ -2,6 +2,7 @@
 import { Button, Box, Text } from "@chakra-ui/react";
 import { useEthers, useEtherBalance } from "@usedapp/core";
 import { formatEther } from '@ethersproject/units';
+import Identicon from "./Identicon";
 
 export default function ConnectButton() {
   const { activateBrowserWallet, account } = useEthers();
@@ -46,6 +47,8 @@ export default function ConnectButton() {
             account.length
           )}`}
         </Text>
+        {/* Add the newly imported Identicon component */}
+        <Identicon />
       </Button>
     </Box>
   ) : (
