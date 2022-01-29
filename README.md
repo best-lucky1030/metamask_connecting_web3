@@ -2,7 +2,7 @@ Today we're going to build a simple React / Web3 Dapp that replicates a small po
 
 By the end of the tutorial you will have a working React app that will be able to connect to your MetaMask account, and read your address & ETH balance. If you connect with multiple accounts the interface will change to reflect the active account. 
 
-A lot of tutorials skip this basic login strategy, or use outdated libraries (which you don't find out until you're halfway through!). To avoid confusion, as of July, 2021 this tutorial & the accompanying repo uses the following tech:
+A lot of tutorials skip this basic login strategy, or use outdated libraries (which you don't find out until you're halfway through!). To avoid confusion, as of Jan, 2022 this tutorial & the accompanying repo uses the following tech:
 
 - react ^17.0.2
 - typescript ^4.5.5
