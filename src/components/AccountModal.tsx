@@ -17,11 +17,23 @@ import { ExternalLinkIcon, CopyIcon } from '@chakra-ui/icons';
 import { useEthers } from '@usedapp/core';
 import Identicon from './Identicon';
 
-export default function AccountModal() {
+type Props = {
+  isOpen: any;
+  onClose: any;
+};
+
+export default function AccountModal({ isOpen, onClose }: Props) {
   const { account, deactivate } = useEthers();
+
+  // Add a function to handle deactivating account
+  function handleDeactivateAccount() {
+    deactivate();
+    onClose();
+  }
   
   return (
-    <Modal>
+    // add our isOpen state and onClose handler to the Modal
+    <Modal isOpen={isOpen} onClose={onClose} isCentered size="md">
       <ModalOverlay />
       <ModalContent
         background="gray.900"
@@ -70,6 +82,8 @@ export default function AccountModal() {
                   borderColor: "blue.300",
                   textDecoration: "underline",
                 }}
+                // Add our deactivate account handler onClick
+                onClick={handleDeactivateAccount}
               >
                 Change
               </Button>
@@ -138,10 +152,10 @@ export default function AccountModal() {
             fontWeight="medium"
             fontSize="md"
           >
-            Your transactions will appear
+            Your transactions will appear here...
           </Text>
         </ModalFooter>
       </ModalContent>
     </Modal>
-  )
+  );
 }
